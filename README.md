@@ -23,7 +23,7 @@ Data source: <https://www.kaggle.com/datasets/mashlyn/online-retail-ii-uci?resou
 * **Language:** Python 3.x
 * **Data Processing:** Pandas, NumPy
 * **Database:** SQLite, SQLAlchemy (ORM)
-* **Visualization:** Plotly Express (Interactive Charts), Seaborn (Statistical Analysis)
+* **Visualization:** Plotly (Interactive Charts), Seaborn (Statistical Analysis)
 * **Web Framework:** Streamlit (UI/UX)
 
 ## Project Structure
@@ -52,13 +52,13 @@ cd rfm-analytics-project
 pip install -r requirements.txt
 ```
 ### 2. Data Setup
-Download the **Online Retail II** dataset (e.g., from Kaggle or UCI) and place the `.csv` file in the `data/raw/` folder.
-*Note: Ensure the filename matches the one defined in `run_pipeline.py` (default: `online_retail_II.csv`).*
+Download the **Online Retail II** dataset (e.g., from Kaggle or UCI) and place the `.csv` file in the `data/` folder.
+*Note: Ensure the filename matches the one defined in `db_handle_run.py` (default: `online_retail_II.csv`).*
 
 ### 3. Run ETL Pipeline
 Execute the pipeline script to clean data and populate the SQL database. This step creates the `transactions` and `returns` tables in SQLite.
 ```bash
-python run_pipeline.py
+python db_handle_run.py
 ```
 ### 4. Launch Dashboard
 Start the Streamlit application:
