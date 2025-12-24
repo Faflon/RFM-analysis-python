@@ -196,7 +196,7 @@ with tab1:
     
     # 3. eda
     st.divider()
-    st.subheader("EDA on clean transactions)")
+    st.subheader("EDA on clean transactions")
     st.caption("Analyze the distribution of key variables in the processed dataset.")
     
     eda_col = st.selectbox("Select Variable to Inspect", ['TotalAmount', 'Quantity', 'Price', 'InvoiceDate'])
@@ -293,7 +293,6 @@ with tab2:
         fig_scatter.update_traces(marker=dict(sizemin=4))
         st.plotly_chart(fig_scatter, use_container_width=True)
         
-        # INSIGHT (Markdown styled as quote)
         st.markdown("""
         > * **Top-Left (Champions & Loyal):** Frequent and recent buyers. **Strategy:** Upsell & Loyalty Rewards.
         > * **Bottom-Left (New & Promising):** Recent buyers with low frequency. **Strategy:** Onboarding & Relationship building.
@@ -326,12 +325,12 @@ with tab2:
                 values='Count',
                 color='Segment',
                 color_discrete_map=SEGMENT_COLORS,
-                template="plotly_dark"
+                template="plotly_dark",
+                custom_data=['Percentage'] 
             )
             fig_tree.update_traces(
                 textinfo="label+value+percent entry",
-                texttemplate="%{label}<br>%{customdata[0]:.1%}",
-                customdata=treemap_data[['Percentage']]
+                texttemplate="%{label}<br>%{customdata[0]:.1%}"
             )
             fig_tree.update_layout(margin=dict(t=0, l=0, r=0, b=0))
             st.plotly_chart(fig_tree, use_container_width=True)
