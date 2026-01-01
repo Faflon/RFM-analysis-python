@@ -52,7 +52,7 @@ cd rfm-analytics-project
 pip install -r requirements.txt
 ```
 ### 2. Data Setup
-Download the **Online Retail II** dataset (e.g., from Kaggle or UCI) and place the `.csv` file in the `data/` folder.
+Download the **Online Retail II** [dataset](https://www.kaggle.com/datasets/mashlyn/online-retail-ii-uci?resource=download) (e.g., from Kaggle or UCI) and place the `.csv` file in the `data/` folder.
 *Note: Ensure the filename matches the one defined in `db_handle_run.py` (default: `online_retail_II.csv`).*
 
 ### 3. Run ETL Pipeline
